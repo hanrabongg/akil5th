@@ -1,0 +1,62 @@
+{{>layout/header}}
+<h1>상품 등록 페이지</h1>
+
+<div class="form-group">
+    <label for="workType" class="form-label mt-4">작성타입</label>
+    <select class="form-select" id="workType">
+        <option>내용기</option>
+        <option>단상자</option>
+    </select>
+    <label for="brightness" class="form-label mt-4">호수</label>
+    <select multiple="" class="form-select" id="brightness">
+        <option>15호</option>
+        <option>20호</option>
+        <option>21호</option>
+        <option>24호</option>
+    </select>
+    <label for="productType" class="form-label mt-4">상품구분</label>
+    <select class="form-select" id="productType">
+        <option>세탁세제</option>
+        <option>주방세제</option>
+        <option>치약</option>
+        <option>팩트</option>
+        <option>샴푸</option>
+    </select>
+    <label for="capacity" class="form-label mt-4">용량</label>
+    <select class="form-select" id="capacity">
+        <option>10g</option>
+        <option>30g</option>
+        <option>50g</option>
+        <option>100g</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="productName" class="form-label mt-4">Example textarea</label>
+    <textarea class="form-control" id="productName" placeholder="상품명을 입력하세요." rows="3"></textarea>
+    <label class="col-form-label mt-4" for="productNameOption">상품명 옵션</label>
+    <input type="text" class="form-control" placeholder="상품명을 입력하세요." id="productNameOption">
+</div>
+<button type="button" id="makeProductName" class="btn btn-primary">상품명 만들기</button>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">Language</th>
+        <th scope="col">상품명</th>
+    </tr>
+    </thead>
+    <tbody id="productNameTBody">
+    <tr class="table-primary">
+        <th scope="row">Active</th>
+        <td>Column content</td>
+    </tr>
+    </tbody>
+</table>
+
+<button type="button" id="viewDemo" class="btn btn-primary">미리보기</button>
+<div id="viewDemoDiv">
+
+</div>
+
+{{>layout/footer}}

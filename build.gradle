@@ -5,6 +5,7 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
+
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -22,18 +23,23 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+//    mavenLocal()
 }
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('com.h2database:h2')
+//    compile fileTree(dir: '/src/main/webapp/WEB-INF/lib', include:['*.jar'])
+    runtimeOnly 'mysql:mysql-connector-java'
     compile('org.springframework.boot:spring-boot-starter-mustache')
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
     compile('org.springframework.session:spring-session-jdbc')
+//    compile('javax.servlet:jstl')
+//    compile("org.apache.tomcat.embed:tomcat-embed-jasper")
+    compile("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.projectlombok:lombok")
     compileOnly("org.projectlombok:lombok")
     testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile('org.springframework.security:spring-security-test')
 
 }

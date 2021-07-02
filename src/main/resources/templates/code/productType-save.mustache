@@ -1,0 +1,24 @@
+{{>layout/header}}
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="productType">상품코드</label>
+                <input type="text" class="form-control" id="productType" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="productName">상품종류</label>
+                <input type="text" class="form-control" id="productName" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="productOrder">표출순서</label>
+                <input type="text" class="form-control" id="productOrder" placeholder="">
+            </div>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">취소</a>
+        <button type="button" class="btn btn-primary" id="btn-save">등록</button>
+    </div>
+</div>
+
+{{>layout/footer}}

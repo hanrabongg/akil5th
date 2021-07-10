@@ -1,0 +1,270 @@
+{{>layout/header}}
+{{>layout/main_header}}
+{{>layout/aside}}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>New</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Projects</a></li>
+                        <li class="breadcrumb-item active">New Draft</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="callout callout-info">
+                        <span style="display: none" id="projectId">1</span>
+                        <h5>에이지 투웨니스 시그니처 에센스 커버 팩트 마스터</h5>
+                        version 0.3
+                    </div>
+
+                    <!-- Main content -->
+                    <div class="invoice p-3 mb-3">
+                        <!-- info row -->
+                        <div class="row invoice-info">
+                            <div class="col-sm-4 invoice-col">
+                                <p class="text-sm">상품 타입
+                                    <b class="d-block">팩트</b>
+                                </p>
+                                <p class="text-sm">용량
+                                    <input class="form-control" type="text" placeholder="Default input" id="capacity">
+                                </p>
+                                <p class="text-sm">증정품
+                                    <input type="checkbox" name="giftYN" data-bootstrap-switch>
+                                </p>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-4 invoice-col">
+                                <b>호수/색상</b><br>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <select class="duallistbox" multiple="multiple" id="colorList">
+                                                <option>15호</option>
+                                                <option>21호</option>
+                                                <option>24호</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-4 invoice-col">
+                                <b>문안 종류</b><br>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <select class="duallistbox" multiple="multiple" id="draftTypeList">
+                                                <option>내용기 밑라벨</option>
+                                                <option>단상자</option>
+                                                <option>파우치</option>
+                                                <option>설명서</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-info float-right" id="createTemplate"><i class="fas fa-copy"></i>
+                                    Create Template
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="invoice p-3 mb-3 showTemplate" style="display: none">
+                        <!-- title row -->
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>
+                                    <i class="fas fa-copy"></i> Template
+                                </h4>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- info row -->
+                        <div class="row invoice-info">
+                            <div class="col-sm-4 invoice-col">
+                                <div class="card card-info shadow-none">
+                                    <div class="card-header">
+                                        <h3 class="card-title">밑라벨</h3>
+
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <select class="duallistbox" multiple="multiple" id="colorList">
+                                                <option selected>상품명</option>
+                                                <option>상품표지</option>
+                                                <option>호수</option>
+                                                <option>기능성</option>
+                                                <option>피부자극 테스트 완료</option>
+                                                <option>사용방법</option>
+                                                <option>용기 교체 방법</option>
+                                                <option>용량</option>
+                                                <option>용법/용량</option>
+                                                <option>주요성분</option>
+                                                <option>전성분</option>
+                                                <option>주의사항</option>
+                                                <option>공정거래 위원회 고시</option>
+                                                <option>고객만족팀</option>
+                                                <option>제조업자 및 책임판매업자</option>
+                                                <option>제조번호 및 사용기한</option>
+                                                <option>MADE IN KOREA</option>
+                                                <option>바코드</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                            <div class="col-sm-4 invoice-col">
+                                <div class="card card-info shadow-none">
+                                    <div class="card-header">
+                                        <h3 class="card-title">단상자</h3>
+
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <select class="duallistbox" multiple="multiple" id="colorList">
+                                                <option selected>상품명</option>
+                                                <option selected>상품표지</option>
+                                                <option>호수</option>
+                                                <option>기능성</option>
+                                                <option>피부자극 테스트 완료</option>
+                                                <option selected>사용방법</option>
+                                                <option>용기 교체 방법</option>
+                                                <option selected>용량</option>
+                                                <option selected>용법/용량</option>
+                                                <option selected>주요성분</option>
+                                                <option selected>전성분</option>
+                                                <option selected>주의사항</option>
+                                                <option selected>공정거래 위원회 고시</option>
+                                                <option selected>고객만족팀</option>
+                                                <option selected>제조업자 및 책임판매업자</option>
+                                                <option selected>제조번호 및 사용기한</option>
+                                                <option selected>MADE IN KOREA</option>
+                                                <option selected>바코드</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-info float-right" id="startDraft"><i class="fas fa-flag"></i>
+                                    Start Draft
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="invoice p-3 mb-3 draftContents" style="display: none">
+                        <!-- title row -->
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>
+                                    <i class="fas fa-flag"></i> Draft
+                                </h4>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- info row -->
+                        <div class="row invoice-info">
+                            <div class="btn-block">
+                                <label for="exampleInputEmail1">상품명</label>
+                                <div>
+                                    <textarea class="summernote" id="productName">
+                                        Place <em>some</em> <u>text</u> <strong>here</strong>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="btn-block">
+                                <label>상품표지</label>
+                                <div>
+                                    <textarea class="summernote" id="productCover">
+
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="btn-block">
+                                <label>기능성</label>
+                                <input type="text" class="form-control" id="" placeholder="기능성" value="미백∙주름개선∙자외선차단 3중 기능성 화장품">
+                            </div>
+                            <div class="btn-block">
+                                <label>피부자극테스트</label>
+                                <input type="text" class="form-control" id="" placeholder="피부자극테스트" value="피부 자극 테스트 완료">
+                            </div>
+                            <div class="btn-block">
+                                <label>사용방법</label>
+                                <textarea class="form-control" rows="3" placeholder="사용방법" id="howTo"></textarea>
+                            </div>
+                            <div class="btn-block">
+                                <label>용기 교체 방법</label>
+                                <textarea class="form-control" rows="3" placeholder="용기 교체 방법" id="capChange"></textarea>
+                            </div>
+                            <div class="btn-block">
+                                <label for="exampleInputEmail1">용량</label>
+                                <input type="text" class="form-control" id="capacity" placeholder="용량">
+                            </div>
+                            <div class="btn-block">
+                                <label>주요성분</label>
+                                <textarea class="form-control" rows="3" placeholder="주요성분" id="capChange"></textarea>
+                            </div>
+                            <div class="btn-block">
+                                <label>전성분</label>
+                                <textarea class="form-control" rows="3" placeholder="전성분" id="capChange">www.aekyung.kr 참조</textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-danger float-right mr-1" id="goToDetail"><i class="fas fa-save"></i>
+                                    Cancel
+                                </button>
+                                <button type="button" class="btn btn-info float-right" id="saveDraft"><i class="fas fa-save"></i>
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+
+{{>layout/footer}}

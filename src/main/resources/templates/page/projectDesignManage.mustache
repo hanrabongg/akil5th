@@ -1,0 +1,156 @@
+<div class="text-center mt-2 mb-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary card-outline">
+                <div class="card-header">
+                    <h3 class="card-title">Design File</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Conversations are loaded here -->
+                    <div class="direct-chat-messages">
+                        <div class="callout callout-success text-left">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="fileCheckbox1">
+                                <label for="fileCheckbox1" class="custom-control-label"></label>
+                                <a class="downloadImg" href="/dist/img/cat.jpg" download="cat.jpg">
+                                    <span class="btn btn-info float-right btn-xs downloadImg" style="width:25%">
+                                        <i class="fas fa-download"></i>
+                                        <span>다운로드</span>
+                                    </span>
+                                </a>
+                                <a class="viewImg" href="/dist/img/cat.jpg" data-toggle="lightbox" data-title="3">
+                                    <span class="btn btn-success float-right btn-xs" style="width:25%;margin-right:5px;">
+                                        <i class="fas fa-image"></i>
+                                        <span>미리보기</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <h5>디자인file_20210709.jpg</h5>
+                            <div class="direct-chat-infos clearfix">
+                                <span class="direct-chat-name float-left">디자인팀 박자인</span>
+                                <span class="direct-chat-timestamp float-right">2021.07.09 10:50</span>
+                            </div>
+                        </div>
+                        <div class="callout callout-success text-left">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="fileCheckbox2" value="option2">
+                                <label for="fileCheckbox2" class="custom-control-label"></label>
+                                <span class="btn btn-info float-right btn-xs downloadImg" style="width:25%">
+                                                            <i class="fas fa-download"></i>
+                                                            <span>다운로드</span>
+                                                        </span>
+                                <a class="viewImg" href="/dist/img/cat.jpg" data-toggle="lightbox" data-title="2">
+                                                        <span class="btn btn-success float-right btn-xs" style="width:25%;margin-right:5px;">
+                                                            <i class="fas fa-image"></i>
+                                                            <span>미리보기</span>
+                                                        </span>
+                                </a>
+                            </div>
+                            <h5>디자인file_20210709.jpg</h5>
+                            <div class="direct-chat-infos clearfix">
+                                <span class="direct-chat-name float-left">디자인팀 박자인</span>
+                                <span class="direct-chat-timestamp float-right">2021.07.09 10:50</span>
+                            </div>
+                        </div>
+                        <div class="callout callout-success text-left">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="fileCheckbox3" value="option2">
+                                <label for="fileCheckbox3" class="custom-control-label"></label>
+                                <span class="btn btn-info float-right btn-xs downloadImg" style="width:25%">
+                                                            <i class="fas fa-download"></i>
+                                                            <span>다운로드</span>
+                                                        </span>
+                                <a class="viewImg" href="/dist/img/cat.jpg" data-toggle="lightbox" data-title="1">
+                                                        <span class="btn btn-success float-right btn-xs" style="width:25%;margin-right:5px;">
+                                                            <i class="fas fa-image"></i>
+                                                            <span>미리보기</span>
+                                                        </span>
+                                </a>
+                            </div>
+                            <h5>디자인file_20210709.jpg</h5>
+                            <div class="direct-chat-infos clearfix">
+                                <span class="direct-chat-name float-left">디자인팀 박자인</span>
+                                <span class="direct-chat-timestamp float-right">2021.07.09 10:50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.direct-chat-messages-->
+                </div>
+                <div class="card-body">
+                    <div id="actions" class="">
+                        <div style="width:100%">
+                            <div class="btn-group w-100">
+                                                        <span class="btn btn-success col fileinput-button">
+                                                            <i class="fas fa-plus"></i>
+                                                            <span>Add files</span>
+                                                        </span>
+                                <button type="submit" class="btn btn-primary col start">
+                                    <i class="fas fa-upload"></i>
+                                    <span>Start upload</span>
+                                </button>
+                                <button type="reset" class="btn btn-warning col cancel">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>Cancel upload</span>
+                                </button>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="d-flex align-items-center">
+                            <div class="fileupload-process w-100">
+                                <div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                    <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table table-striped files" id="previews">
+                        <div id="template" class="row mt-2">
+                            <div class="col-auto">
+                                <span class="preview"><img src="data:," alt="" data-dz-thumbnail /></span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <p class="mb-0">
+                                    <span class="lead" data-dz-name></span>
+                                    (<span data-dz-size></span>)
+                                </p>
+                                <strong class="error text-danger" data-dz-errormessage></strong>
+                            </div>
+                            <div class="col-4 d-flex align-items-center">
+                                <div class="progress progress-striped active w-100" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                    <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                                </div>
+                            </div>
+                            <div class="col-auto d-flex align-items-center">
+                                <div class="btn-group">
+                                    <button class="btn btn-primary start">
+                                        <i class="fas fa-upload"></i>
+                                        <span>Start</span>
+                                    </button>
+                                    <button data-dz-remove class="btn btn-warning cancel">
+                                        <i class="fas fa-times-circle"></i>
+                                        <span>Cancel</span>
+                                    </button>
+                                    <button data-dz-remove class="btn btn-danger delete">
+                                        <i class="fas fa-trash"></i>
+                                        <span>Delete</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+    <!-- /.row -->
+</div>

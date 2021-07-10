@@ -12,6 +12,7 @@ buildscript {
     }
 }
 
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -41,5 +42,8 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     compileOnly("org.projectlombok:lombok")
     testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    compile('org.apache.pdfbox:pdfbox:2.0.23')
+    compile('org.apache.pdfbox:pdfbox-tools:2.0.23')
 
 }

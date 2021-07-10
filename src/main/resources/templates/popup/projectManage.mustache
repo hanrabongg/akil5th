@@ -1,0 +1,52 @@
+<div class="modal fade" id="modifyPopup">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="card-header modal-header">
+                <h3 class="card-title">Project Manage</h3>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <!-- form start -->
+            <form>
+                <div class="modal-body">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="projectName">Project Name</label>
+                            <input type="email" class="form-control" id="projectName" placeholder="상품명">
+                        </div>
+                        <div class="form-group">
+                            <label for="productType">Product Type</label>
+                            <select class="select2" style="width: 100%;">
+                                <option>팩트</option>
+                                <option>립스틱</option>
+                                <option>스킨</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Target</label>
+                            <div class="input-group date" id="targetDate" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#targetDate"/>
+                                <div class="input-group-append" data-target="#targetDate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="projectStatus">Status</label>
+                            <select class="select2" style="width: 100%;">
+                                <option>Not started</option>
+                                <option>In Progress</option>
+                                <option>Done</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-default" data-dismiss="modal">닫기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,122 @@
+{{>layout/header}}
+
+{{>layout/preloader}}
+{{>layout/main_header}}
+{{>layout/aside}}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Project Detail</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Project Detail</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">에이지 투웨니스 시그니처 에센스 커버 팩트 마스터</h3>
+                <span style="display: none" id="projectId">1</span>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <!-- Title -->
+                    <div class="col-12 col-md-12 col-lg-6 order-4 order-md-1">
+                        <div class="text-left mt-2 mb-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card card-primary card-outline">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Product Information</h3>
+
+                                            <div class="card-tools">
+                                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="card-body" style="display: block;">
+                                            <p>Product Type
+                                                <b class="d-block">팩트</b>
+                                            </p>
+                                            <p>Start
+                                                <b class="d-block">2021.07.09</b>
+                                            </p>
+                                            <p>Target
+                                                <b class="d-block">2021.08.01</b>
+                                            </p>
+                                            <p>Last Updated
+                                                <b class="d-block">2021.08.01</b>
+                                            </p>
+                                            <div>
+                                                <button type="button" class="btn btn-primary btn-sm">In Progress</button>
+                                            </div>
+                                            <div class="mt-2">
+<!--                                                <a href="/openComparePop?id=1" id="comparePopup" projectId="1" rel="modal:open">-->
+<!--                                                    <button type="button" class="btn btn-info btn-flat"><i class="fa fa-check-circle"></i> Compare</button>-->
+<!--                                                </a>-->
+                                                <button type="button" class="btn btn-info btn-flat" data-toggle="modal" data-target="#comparePopup"><i class="fa fa-check-circle"></i> Compare</button>
+                                                <button type="button" class="btn btn-info btn-flat"><i class="fa fa-user-plus"></i> G/W 상신</button>
+                                                <button type="button" class="btn btn-info btn-flat" data-toggle="modal" data-target="#modifyPopup"><i class="fa fa-undo"></i> 수정하기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-12 col-lg-6 order-3 order-md-2">
+                        {{>page/projectDesignManage}}
+                    </div>
+
+                    <!-- Activity -->
+                    <div class="col-12 col-md-12 col-lg-6 order-2 order-md-3">
+                        <div class="row">
+                            <div class="col-12">
+                                {{>page/laboratoryFront}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-6 order-1 order-md-4">
+                        <div class="row">
+                            <div class="col-12">
+                                {{>page/marketingFront}}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <section class="content">
+        {{>page/projectDetailReply}}
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{{>popup/projectManage}}
+{{>popup/compare}}
+
+{{>layout/footer}}

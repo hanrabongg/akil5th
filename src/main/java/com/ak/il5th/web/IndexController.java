@@ -1,8 +1,10 @@
 package com.ak.il5th.web;
 
+import com.ak.il5th.service.pdf.ConnectVisionAPI;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @Controller
 public class IndexController {
@@ -27,6 +29,9 @@ public class IndexController {
         return "pdf-pdfBox";
     }
 
+
+
+
     @GetMapping("/projectList")
     public String projectList() {
         return "page/projectList";
@@ -38,11 +43,9 @@ public class IndexController {
         return "page/projectDetail";
     }
 
-    @GetMapping("/openComparePop")
-    public String openComparePopup(@RequestParam("id") String id) {
-        System.out.println("projectID !!!!: " + id);
-        return "popup/compare";
-    }
+
+
+
 
     @GetMapping("/marketingDraft")
     public String marketingNew(@RequestParam("projectId") String id, @RequestParam("requestType") String requestType) {

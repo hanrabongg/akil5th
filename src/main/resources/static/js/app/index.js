@@ -107,10 +107,15 @@ var projectDetail = {
             _this.goMakEdit(this);
         });
 
+        $('.imgDetect').on('click', function() {
+            _this.detectFile(this, "API");
+        });
 
-        // $('.comparePopup').on('click', function() {
-        //     _this.openComparePopup(this);
-        // });
+        $('.pdfDetect').on('click', function() {
+            _this.detectFile(this, "TIKA");
+        });
+
+
 
 
     },
@@ -120,6 +125,7 @@ var projectDetail = {
             alwaysShowClose: true
         });
     },
+
     goMakNew : function(obj) {
         var projectID = $("#projectId").text();
         location.href = "/marketingDraft?projectId="+projectID+"&requestType=NEW";
@@ -128,21 +134,38 @@ var projectDetail = {
         var projectID = $("#projectId").text();
         location.href = "/marketingDraft?projectId="+projectID+"&requestType=EDIT";
     },
-
-    openComparePopup : function (obj) {
+    detectFile : function(obj, flag) {
         event.preventDefault();
-        var projectId = $(obj).attr("projectId");
+        var projectId = $("#projectId").text();
+        var url = (flag == "API") ? "/api/v1/getTextViaAPI" : "/api/v1/getTextViaTika";
 
-        $.popup({
-            url: '/openComparePop',
-            close: function(result) {
-                console.log(result);
+        var sendData = {"projectId":projectId, "fileUrl": "/dist/file/1.루나에센스수분광팩트CX_디자인.jpg"}
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            contentType: 'application/json;charset=utf-8',
+            data: JSON.stringify(sendData),
+            dataType: 'json',
+            success: function(response) {
+                showDesignText(response);
+            },
+            error: function(xhr, status, msg) {
+                console.log("상태값 : "+ status + "Http에러메세지" + msg);
             }
+
         });
     }
 
 
+
+
 };
+
+function showDesignText(obj) {
+    $('#designText').text(JSON.stringify(obj.detectedText))
+    console.log("string : " + JSON.stringify(obj));
+}
 
 var marketingDraft = {
     init : function() {

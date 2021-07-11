@@ -69,7 +69,7 @@
 <!--                                                <a href="/openComparePop?id=1" id="comparePopup" projectId="1" rel="modal:open">-->
 <!--                                                    <button type="button" class="btn btn-info btn-flat"><i class="fa fa-check-circle"></i> Compare</button>-->
 <!--                                                </a>-->
-                                                <button type="button" class="btn btn-info btn-flat" data-toggle="modal" data-target="#comparePopup"><i class="fa fa-check-circle"></i> Compare</button>
+                                                <button type="button" class="btn btn-info btn-flat comparePopup" data-toggle="modal" data-target="#comparePopup"><i class="fa fa-check-circle"></i> Compare</button>
                                                 <button type="button" class="btn btn-info btn-flat"><i class="fa fa-user-plus"></i> G/W 상신</button>
                                                 <button type="button" class="btn btn-info btn-flat" data-toggle="modal" data-target="#modifyPopup"><i class="fa fa-undo"></i> 수정하기</button>
                                             </div>
@@ -110,7 +110,7 @@
 
     </section>
     <section class="content">
-        {{>page/projectDetailReply}}
+        {{>page/projectDetailReply_disqus}}
     </section>
     <!-- /.content -->
 </div>

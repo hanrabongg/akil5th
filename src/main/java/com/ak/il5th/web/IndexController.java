@@ -1,13 +1,22 @@
 package com.ak.il5th.web;
 
+import com.ak.il5th.service.common.FileUploadService;
 import com.ak.il5th.service.pdf.ConnectVisionAPI;
+import com.ak.il5th.web.dto.FileListResponseDto;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
+@RequiredArgsConstructor
 @Controller
 public class IndexController {
+
+    private final FileUploadService fileUploadService;
 
     @GetMapping("/")
     public String index() {
@@ -24,10 +33,10 @@ public class IndexController {
         return "product-save";
     }
 
-    @GetMapping("/pdfRead_pdfBox")
-    public String pdfReadByPDFBox() {
-        return "pdf-pdfBox";
-    }
+//    @GetMapping("/pdfRead_pdfBox")
+//    public String pdfReadByPDFBox() {
+//        return "pdf-pdfBox";
+//    }
 
 
 
@@ -38,18 +47,49 @@ public class IndexController {
     }
 
     @GetMapping("/projectDetail")
-    public String projectDetail(@RequestParam("id") String id) {
+    public ModelAndView projectDetail(@RequestParam("projectId") String id) {
         System.out.println("projectID : " + id);
-        return "page/projectDetail";
+        ModelAndView mv = new ModelAndView();
+
+        List<FileListResponseDto> fileList = new ArrayList<>();
+        fileList = fileUploadService.findFileListByProjectId(id);
+
+        System.out.println("fileList.size() : " + fileList.size());
+
+        mv.addObject("projectId", id);
+        mv.addObject("fileList", fileList);
+
+        mv.setViewName("page/projectDetail");
+
+        return mv;
+
     }
 
-
+//    @GetMapping("/getFileList")
+//    public ModelAndView getFileList(@RequestParam("projectId") String id) {
+//        System.out.println("projectID : " + id);
+//        ModelAndView mv = new ModelAndView();
+//
+//        List<FileListResponseDto> fileList = new ArrayList<>();
+//        fileList = fileUploadService.findFileListByProjectId(id);
+//
+//        System.out.println("fileList.size() : " + fileList.size());
+//
+//        mv.addObject("projectId", id);
+//        mv.addObject("fileList", fileList);
+//
+//        mv.setViewName("page/projectDetail");
+//
+//        return mv;
+//
+//    }
 
 
 
     @GetMapping("/marketingDraft")
-    public String marketingNew(@RequestParam("projectId") String id, @RequestParam("requestType") String requestType) {
+    public ModelAndView marketingNew(@RequestParam("projectId") String id, @RequestParam("requestType") String requestType) {
         System.out.println("projectID : " + id +"/requestType : "+requestType);
+        ModelAndView mv = new ModelAndView();
 
         if ("NEW".equals(requestType)) {
             System.out.println("신규!");
@@ -57,7 +97,10 @@ public class IndexController {
             System.out.println("수정!");
         }
 
-        return "page/marketingDraft";
+        mv.addObject("projectId", id);
+
+        mv.setViewName("page/marketingDraft");
+        return mv;
     }
 
     @GetMapping("/labDraft")
@@ -67,11 +110,6 @@ public class IndexController {
     }
 
 
-
-
-//    pdfRead_pdfBox
-//            pdfRead_api
-//    typoCheck
 
 
 }
